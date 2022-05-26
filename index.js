@@ -13,7 +13,7 @@ app.use(
 require('./auth');
 
 const app = express();
-const home="https://oauth-login-mern.netlify.app/home";
+const home=redirect;
 const port=process.env.port;
 
 function isLoggedIn(req, res, next) {

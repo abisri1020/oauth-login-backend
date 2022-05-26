@@ -16,7 +16,7 @@ const GITHUB_CLIENT_SECRET = "c77f49d44f3d01f1cb356203ed16070333b74681"
 passport.use(new GoogleStrategy({
   clientID: GOOGLE_CLIENT_ID,
   clientSecret: GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:5000/auth/google/callback",
+  callbackURL: "https://oauth-login-backend.herokuapp.com/auth/google/callback",
   passReqToCallback: true,
 },
 function(request, accessToken, refreshToken, profile, done) {
@@ -31,7 +31,7 @@ passport.serializeUser(function(user, done) {
 passport.use(new FacebookStrategy({
   clientID: FACEBOOK_APP_ID,
   clientSecret: FACEBOOK_APP_SECRET,
-  callbackURL: "http://localhost:5000/auth/facebook/callback",
+  callbackURL: "https://oauth-login-backend.herokuapp.com/auth/facebook/callback",
   passReqToCallback: true,
 },
 function(request, accessToken, refreshToken, profile, done) {
@@ -42,7 +42,7 @@ function(request, accessToken, refreshToken, profile, done) {
 passport.use(new GithubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: "http://localhost:5000/auth/github/callback",
+  callbackURL: "https://oauth-login-backend.herokuapp.com/auth/github/callback",
   passReqToCallback: true,
 },
 function(request, accessToken, refreshToken, profile, done) {
