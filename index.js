@@ -4,7 +4,8 @@ const passport = require('passport');
 require('./auth');
 
 const app = express();
-const home=process.env.clienturl;
+const home="https://oauth-login-mern.netlify.app/home";
+const port=process.env.port;
 
 function isLoggedIn(req, res, next) {
   req.user ? next() : res.sendStatus(401);
@@ -69,4 +70,4 @@ app.get('/auth/github/failure', (req, res) => {
   res.send('Failed to authenticate..');
 });
 
-app.listen(5000, () => console.log('listening on port: 5000 sever is running'));
+app.listen(port, () => console.log('sever is running'));
