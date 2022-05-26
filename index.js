@@ -1,6 +1,15 @@
 const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
+const cors = require('cors');
+const dotenv =require('dotenv');
+
+dotenv.config();
+app.use(
+    cors({
+      origin: "*",
+    })
+  );
 require('./auth');
 
 const app = express();
